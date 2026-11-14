@@ -1,0 +1,6 @@
+# Python-generated files
+*.py
+test_unit.cpp
+# Virtual environments
+.venv
+/out
