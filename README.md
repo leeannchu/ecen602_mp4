@@ -76,10 +76,12 @@ The client saves the downloaded response body to `downloaded.html`.
   require validation on every request.
 - The server is designed for POSIX systems and is not directly compatible
   with native Windows sockets.
-
+- If-Modified-Since follows the assignment order Expires -> Last-Modified -> Date.
+  Using Expires can miss a change made between the fetch and the Expires time
+- getaddrinfo() is blocking, so a slow DNS lookup briefly stalls all connections.
 ## Team Contributions
 
 | Member | Responsibilities |
 |---|---|
 | **Lian Chu** | Client implementation and test report |
-| **Daniel Shyu** | Proxy event loop, socket handling, request forwarding, HTTP parsing, LRU cache, conditional GET behavior, and integration |
+| **Chiahsiang Shyu** | Proxy event loop, socket handling, request forwarding, HTTP parsing, LRU cache, conditional GET behavior, and integration |
